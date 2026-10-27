@@ -4,16 +4,16 @@
 */
 
 const hello = (name) => {
-    // ...
-}
+  return `Hello, ${name}!`;
+};
 
 /*
 2.  Creaza o functie care sa returneze textul primit in lowercase
 */
 
 const lowercase = (text) => {
-    // ...
-}
+  return text.toLowerCase();
+};
 
 /*
 3.  Creaza o functie care sa primeasca urmatoarele 3 argumente: x, y si operation.
@@ -21,8 +21,16 @@ const lowercase = (text) => {
     valoarea argumentului operation (+, -, *, /) si sa returneze rezultatul
 */
 const calc = (x, y, operation) => {
-    // ...
-}
+  if (operation === "+") {
+    return x + y;
+  } else if (operation === "-") {
+    return x - y;
+  } else if (operation === "*") {
+    return x * y;
+  } else if (operation === "/") {
+    return x / y;
+  }
+};
 
 /*
 4.  Creaza o functie care sa itereze printr-un array de numere intregi, sa valideze ca valorile sunt intr-adevar 
@@ -30,21 +38,26 @@ const calc = (x, y, operation) => {
     aceasta valoare sa nu fie luata in calcul.
 */
 const sum = (numbers) => {
-    // ...
-}
+  return numbers.reduce((a, n) => (!isNaN(Number(n)) ? a + n : a), 0);
+};
 
 /*
 5.  Creaza o functie care sa returneze un obiect ce va contine urmatoarele proprietati: firstName, lastName, age si o 
     metoda `getFullName` care sa returneze numele complet (ex: "Florin Stoian").
 */
 const createStudent = (firstName, lastName, age) => {
-    // ...
-}
+  return {
+    firstName,
+    lastName,
+    age,
+    getFullName: () => `${firstName} ${lastName}`,
+  };
+};
 
 module.exports = {
-    hello,
-    lowercase,
-    calc,
-    sum,
-    createStudent
+  hello,
+  lowercase,
+  calc,
+  sum,
+  createStudent,
 };
